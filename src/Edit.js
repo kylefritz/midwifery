@@ -7,15 +7,19 @@ export default class Edit extends Component {
   constructor() {
     super();
     this.state = {babies: 0};
+
+    this.handleJson = this.handleJson.bind(this);
+    this.handleCaughtOne = this.handleCaughtOne.bind(this);
+    this.handleLostOne = this.handleLostOne.bind(this);
   }
   componentDidMount(){
-    client.getBabies().then(()=> this.handleJson())
+    client.getBabies().then(this.handleJson);
   }
   handleCaughtOne(){
-    client.caughtBaby().then(()=> this.handleJson())
+    client.caughtBaby().then(this.handleJson);
   }
   handleLostOne(){
-    client.lostBaby().then(()=> this.handleJson())
+    client.lostBaby().then(this.handleJson);
   }
   handleJson({babies}) {
     console.log(`KJ has caught ${babies} babies!!`)
@@ -31,13 +35,10 @@ export default class Edit extends Component {
       <div>
         <h1>Total Caught: {babies}</h1>
         <br/>
-        <button onClick={this.handleCaughtOne}>I caught one!</button>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <button onClick={this.handleLostOne}>Oops, subtract one.</button>
+        <div className="grid">
+          <button className="button -green" onClick={this.handleCaughtOne}>I caught one!</button>
+          <button className="button -dark" onClick={this.handleLostOne}>Oops, subtract one.</button>
+        </div>
        </div>
     )
   }

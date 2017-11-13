@@ -9,7 +9,7 @@ export default class Caught extends Component {
     this.state = {babies: 0};
   }
   componentDidMount(){
-    client.getBabies().then(r => r.json()).then(({babies}) => {
+    client.getBabies().then(({babies}) => {
       console.log(`KJ has caught ${babies} babies!!`)
       this.setState({babies})
     })
