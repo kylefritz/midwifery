@@ -6,13 +6,15 @@
     "react": "^16.1.0",
     "react-dom": "^16.1.0"
   },
-  "homepage": "midwifery.xxx",
+  "homepage": "https://kylefritz.github.io/midwifery",
   "devDependencies": {
     "node-sass": "^4.6.1",
     "react-scripts": "1.0.17",
     "sass-loader": "^6.0.6"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
