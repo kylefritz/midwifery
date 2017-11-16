@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import Thermometer from './Thermometer';
 import * as client from './client'
 
 export default class Edit extends Component {

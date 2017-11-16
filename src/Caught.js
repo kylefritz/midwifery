@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 
 import Thermometer from './Thermometer';
-import * as client from './client'
+import * as client from './client';
+import randomColor from 'randomcolor';
+
+const T = ({children}) => <span style={{color: `${randomColor()}`}}>{children}</span>
 
 export default class Caught extends Component {
   constructor() {
@@ -37,7 +40,9 @@ export default class Caught extends Component {
         </div>
 
         <div>
-          <h1>Catch Those Babies KJ!!</h1>
+          <h1>
+            <T>Catch</T> <T>Those</T> <T>Babies</T> <T>KJ</T><T>!</T><T>!</T>
+          </h1>
         </div>
        </div>
     )

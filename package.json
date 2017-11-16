@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "randomcolor": "^0.5.3",
     "react": "^16.1.0",
     "react-dom": "^16.1.0"
   },
-  "homepage": "https://kylefritz.github.io/midwifery",
   "devDependencies": {
     "node-sass": "^4.6.1",
     "react-scripts": "1.0.17",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build && aws s3 sync build/ s3://midwifery.xxx",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
