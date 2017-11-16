@@ -14,7 +14,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "npm run build && aws s3 sync build/ s3://midwifery.xxx",
+    "deploy": "npm run build && aws s3 sync build/ s3://midwifery.xxx --acl public-read",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

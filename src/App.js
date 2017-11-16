@@ -21,7 +21,7 @@ export default class App extends Component {
         {this.state.showEdit ? <Edit/> : <Caught />}
 
         <div className="bottom-link">
-          <a href onClick={this.handleEdit}>
+          <a href="" onClick={this.handleEdit}>
             edit
           </a>
         </div>
