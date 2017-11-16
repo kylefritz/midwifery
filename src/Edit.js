@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import Loader from './Loader';
 import * as client from './client'
 
 export default class Edit extends Component {
@@ -27,7 +28,7 @@ export default class Edit extends Component {
   render() {
     const {babies} = this.state;
     if(!babies) {
-      return <h4>Loading...</h4>;
+      return <Loader />;
     }
 
     return (
@@ -35,8 +36,8 @@ export default class Edit extends Component {
         <h1>Total Caught: {babies}</h1>
         <br/>
         <div className="grid">
-          <button className="button -green" onClick={this.handleCaughtOne}>I caught one!</button>
-          <button className="button -dark" onClick={this.handleLostOne}>Oops, subtract one.</button>
+          <button className="button -green" onClick={this.handleCaughtOne}>I Caught One!</button>
+          <button className="button -dark" onClick={this.handleLostOne}>Oops, subtract one</button>
         </div>
        </div>
     )
