@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
+import randomColor from 'randomcolor';
 
 import Thermometer from './Thermometer';
 import Loader from './Loader';
 import * as client from './client';
-import randomColor from 'randomcolor';
 
 const T = ({children, style={}}) => (
   <span style={{color: `${randomColor({luminosity: 'light'})}`, ...style}}>
