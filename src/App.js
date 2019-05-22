@@ -1,30 +1,32 @@
-import React, {Component} from 'react';
-
-import Caught from './Caught';
-import Edit from './Edit';
+import React, { Component } from 'react';
+import Kj from './Kj';
+import Ljf from './Ljf';
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {showEdit: false};
-    this.handleEdit = this.handleEdit.bind(this);
+  state = {
+    // kjMode: true
+    kjMode: false
   }
 
-  handleEdit(e){
-    e.preventDefault();
-    this.setState({showEdit: !this.state.showEdit});
+  handleMode = () => {
+    this.setState({
+      kjMode: !this.state.kjMode
+    })
   }
 
   render() {
     return (
       <div>
-        {this.state.showEdit ? <Edit/> : <Caught />}
-
-        <div className="bottom-link">
-          <a href="" onClick={this.handleEdit}>
-            edit
-          </a>
-        </div>
+        {this.state.kjMode
+          ?
+            <Kj
+              handleMode = {this.handleMode}
+            />
+          :
+            <Ljf
+              handleMode = {this.handleMode}
+            />
+        }
       </div>
     )
   }
