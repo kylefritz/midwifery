@@ -65,7 +65,9 @@ export default class Ljf extends Component {
           {this.state.fans.map((message, i) =>
             <div key={i}>
               <span className="ljf medium">
-                {message.body}
+                {message.body
+                  .replace(/[A-Za-z0-9]/g, '')
+                }
               </span>
               <span className="ljf small right">
                 {
