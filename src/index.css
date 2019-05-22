@@ -193,3 +193,35 @@ h1{
     -webkit-transform: scaleY(1.0);
   }
 }
+
+.ljf.header{
+  font-family: 'Lobster', cursive;
+  font-size: 62px;
+  margin-top: -20px;
+}
+.ljf.top{
+  height: calc( (100vh - 78px - 19px - 19px - 47px - 30px) * 0.67 );
+  overflow-y: scroll;
+}
+.ljf.bottom{
+  height: calc( (100vh - 78px - 19px - 19px - 47px - 30px) * 0.33 );
+  overflow-y: scroll;
+}
+.ljf.big{
+  font-size: 32px;
+}
+.ljf.medium{
+  font-size: 16px;
+}
+.ljf.small{
+  font-size: 12px;
+}
+.ljf.right{
+  float: right;
+}
+.ljf.padded{
+  padding-top: 5px;
+}
+.under{
+  text-decoration: underline
+}
