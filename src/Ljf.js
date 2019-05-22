@@ -77,7 +77,9 @@ export default class Ljf extends Component {
                       ? new Date(message.time).getHours() - 12
                       : new Date(message.time).getHours()
                 }:{
-                  new Date(message.time).getMinutes()
+                  new Date(message.time).getMinutes() < 10
+                    ? '0' + new Date(message.time).getMinutes()
+                    : new Date(message.time).getMinutes()
                 }{
                   new Date(message.time).getHours() > 11 ? 'p' : 'a'
                 }
