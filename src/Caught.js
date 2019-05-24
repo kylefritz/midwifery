@@ -37,11 +37,11 @@ export default class Caught extends Component {
         <div className="grid">
           <Thermometer
             value={this.state.babies}
-            max={50}
+            max={100}
 
             theme={'dark'}
             format={''}
-            steps={4}
+            steps={10}
             size={'large'}
             height={400}
            />

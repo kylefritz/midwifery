@@ -15,3 +15,9 @@ export const lostBaby = () =>{
     method: 'DELETE'
   }).then(r => r.json())
 }
+
+export const getEmojis = () =>{
+  return fetch(url+'emoji', {
+    method: 'GET'
+  }).then(r => r.json())
+}
