@@ -88,7 +88,8 @@ export default class Ljf extends Component {
                       : full_hour
             let min =  ruby_time.slice(14,16)
             let half = full_hour > 11 ? 'p' : 'a'
-            return <div key={i}>
+            let bet_css_class = message.body.match(/bet/ig) ? "ljf bet" : null
+            return <div key={i} className={bet_css_class}>
               <span className="ljf medium">
                 {message.body}
               </span>

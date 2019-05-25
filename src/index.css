@@ -231,6 +231,11 @@ h1{
 .ljf.padded{
   padding-top: 5px;
 }
+.ljf.bet{
+  background-color: darkgoldenrod;
+  padding: 6px;
+  margin: 2px;
+}
 .under{
   text-decoration: underline
 }
