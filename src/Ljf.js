@@ -101,7 +101,7 @@ export default class Ljf extends Component {
 
         <div className="ljf small padded">
           <span>
-            Send emojis for Laura to (812) 5-PUSH-IT <span className="ljf under">(812) 578-7448</span>!
+            Send emojis for Laura to (812) 5-PUSH-IT <a href="tel:181255787449" className="ljf under">(812) 578-7448</a>!
           </span>
           <br/><br/>
           <span className="ljf under"onClick={this.props.handleMode}>
