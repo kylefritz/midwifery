@@ -40,22 +40,21 @@ export default class Ljf extends Component {
         <div className="ljf top padded">
           {this.state.parents.map((message, i) => {
             let ruby_time = message.time
-            let military_hour = ruby_time.slice(11,13)
-            let hour = military_hour === 0
+            let grab_year = ruby_time.slice(0,4)
+            let grab_month = ruby_time.slice(5,7) - 1
+            let grab_date = ruby_time.slice(8,10)
+            let grab_hour = ruby_time.slice(11,13)
+            let utc = new Date(Date.UTC(grab_year, grab_month, grab_date, grab_hour));
+            let month = utc.getMonth()
+            let date = utc.getDate()
+            let full_hour = utc.getHours()
+            let hour = full_hour === 0
                     ? 12
-                    : military_hour > 12
-                      ? military_hour - 12
-                      : military_hour
-            let min = ruby_time.slice(14,16)
-            let half = military_hour > 11 ? 'p' : 'a'
-            let full_month = ruby_time.slice(5,7)
-            let month = full_month.charAt(0) === '0'
-              ? full_month.slice(1)
-              : full_month
-           let full_date = ruby_time.slice(8,10)
-            let date = full_date.charAt(0) === '0'
-              ? full_date.slice(1)
-              : full_date
+                    : full_hour > 12
+                      ? full_hour - 12
+                      : full_hour
+            let min =  ruby_time.slice(14,16)
+            let half = full_hour > 11 ? 'p' : 'a'
             return <div key={i}>
               <span className="ljf big">
                 {message.body}
@@ -74,22 +73,21 @@ export default class Ljf extends Component {
         <div className="ljf bottom padded">
           {this.state.fans.map((message, i) => {
             let ruby_time = message.time
-            let military_hour = ruby_time.slice(11,13)
-            let hour = military_hour === 0
+            let grab_year = ruby_time.slice(0,4)
+            let grab_month = ruby_time.slice(5,7) - 1
+            let grab_date = ruby_time.slice(8,10)
+            let grab_hour = ruby_time.slice(11,13)
+            let utc = new Date(Date.UTC(grab_year, grab_month, grab_date, grab_hour));
+            let month = utc.getMonth()
+            let date = utc.getDate()
+            let full_hour = utc.getHours()
+            let hour = full_hour === 0
                     ? 12
-                    : military_hour > 12
-                      ? military_hour - 12
-                      : military_hour
-            let min = ruby_time.slice(14,16)
-            let half = military_hour > 11 ? 'p' : 'a'
-            let full_month = ruby_time.slice(5,7)
-            let month = full_month.charAt(0) === '0'
-              ? full_month.slice(1)
-              : full_month
-           let full_date = ruby_time.slice(8,10)
-            let date = full_date.charAt(0) === '0'
-              ? full_date.slice(1)
-              : full_date
+                    : full_hour > 12
+                      ? full_hour - 12
+                      : full_hour
+            let min =  ruby_time.slice(14,16)
+            let half = full_hour > 11 ? 'p' : 'a'
             return <div key={i}>
               <span className="ljf medium">
                 {message.body}
