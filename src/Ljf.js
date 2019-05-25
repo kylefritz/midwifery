@@ -46,9 +46,7 @@ export default class Ljf extends Component {
                     : military_hour > 12
                       ? military_hour - 12
                       : military_hour
-            let min = ruby_time.slice(14,16) < 10
-                    ? '0' + ruby_time.slice(14,16)
-                    : ruby_time.slice(14,16)
+            let min = ruby_time.slice(14,16)
             let half = military_hour > 11 ? 'p' : 'a'
             let full_month = ruby_time.slice(5,7)
             let month = full_month.charAt(0) === '0'
@@ -82,9 +80,7 @@ export default class Ljf extends Component {
                     : military_hour > 12
                       ? military_hour - 12
                       : military_hour
-            let min = ruby_time.slice(14,16) < 10
-                    ? '0' + ruby_time.slice(14,16)
-                    : ruby_time.slice(14,16)
+            let min = ruby_time.slice(14,16)
             let half = military_hour > 11 ? 'p' : 'a'
             let full_month = ruby_time.slice(5,7)
             let month = full_month.charAt(0) === '0'
@@ -99,7 +95,7 @@ export default class Ljf extends Component {
                 {message.body}
               </span>
               <span className="ljf small right">
-                {hour}:{min}{half} {month}/{date}
+                {hour}:{min}{half} {month}/{date}&nbsp;☎-{message.from.substring(message.from.length - 4, message.from.length)}
               </span>
             </div>
           })}
