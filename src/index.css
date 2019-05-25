@@ -204,7 +204,7 @@ h1{
 
 .ljf.header{
   font-family: 'Lobster', cursive;
-  font-size: 8vh;
+  font-size: 5vh;
 }
 .ljf.top{
   height: calc(34vh - 14px * 2);

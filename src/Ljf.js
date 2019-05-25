@@ -30,7 +30,7 @@ export default class Ljf extends Component {
     return (
       <div>
         <div className="ljf header">
-          Labor Watch
+          Labor Watch!
         </div>
 
         <div className="ljf small padded">
