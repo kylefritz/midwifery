@@ -96,6 +96,7 @@ export default class Ljf extends Component {
 
         <div className="ljf bottom padded">
           {this.state.reacts.map((message, i) => {
+            let css = message.body.match(/#bet/ig) ? "ljf bet" : ""
             let ruby_time = message.time
             let grab_year = ruby_time.slice(0,4)
             let grab_month = ruby_time.slice(5,7) - 1
@@ -112,11 +113,15 @@ export default class Ljf extends Component {
                       : full_hour
             let min =  ruby_time.slice(14,16)
             let half = full_hour > 11 ? 'p' : 'a'
-            let bet_css_class = message.body.match(/#bet/ig) ? "ljf bet" : null
+            let red = message.from.slice(2,5)/999*100
+            let green = message.from.slice(5,8)/999*100
+            let blue = message.from.slice(8,12)/9999*100
+            let color = `rgb( ${red}%, ${green}%, ${blue}% )`
+            let id = message.from.substring(message.from.length - 4, message.from.length)
             return (
               <div
                 key={i}
-                className={bet_css_class}
+                className={css}
                 ref={(element) => {
                   if(this.state.reacts.length - 1 === i) {
                     this.latestReact = element
@@ -127,7 +132,7 @@ export default class Ljf extends Component {
                   {message.body}
                 </span>
                 <span className="ljf small right">
-                  {hour}:{min}{half} {month}/{date}&nbsp;☎-{message.from.substring(message.from.length - 4, message.from.length)}
+                  {hour}:{min}{half} {month}/{date}&nbsp;<span style={{color: color}} >☎-{id}</span>
                 </span>
               </div>
             )
