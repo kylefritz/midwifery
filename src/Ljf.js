@@ -110,7 +110,7 @@ export default class Ljf extends Component {
                       : full_hour
             let min =  ruby_time.slice(14,16)
             let half = full_hour > 11 ? 'p' : 'a'
-            let bet_css_class = message.body.match(/bet/ig) ? "ljf bet" : null
+            let bet_css_class = message.body.match(/#bet/ig) ? "ljf bet" : null
             return (
               <div
                 key={i}
@@ -134,6 +134,11 @@ export default class Ljf extends Component {
 
         <div className="ljf small padded">
           Send emojis for Laura to (812) 5-PUSH-IT <a href="sms:18125787448" className="ljf under">(812) 578-7448</a>!
+
+          <br/><br/>
+
+          Include <span className="ljf bet">#bet</span> to wager on weight, phenotypic sex, etc.
+
           <br/><br/>
 
           <span
