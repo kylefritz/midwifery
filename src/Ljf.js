@@ -145,16 +145,16 @@ export default class Ljf extends Component {
         </div>
 
         <div className="ljf small padded">
-          Send emojis for Laura to (812) 5-PUSH-IT <a href="sms:18125787448" className="ljf under">(812) 578-7448</a>!
+          Send emojis for Laura to (812) 5-PUSH-IT <a href="sms:18125787448" className="under">(812) 578-7448</a>!
 
           <br/><br/>
 
-          Include <span className="ljf bet">#bet</span> to wager on weight, phenotypic sex, etc.
+          Include <a href="sms:18125787448&body=#bet " className="ljf bet">#bet</a> to wager on weight, phenotypic sex, etc.
 
           <br/><br/>
 
           <span
-            className="ljf under"
+            className="under"
             onClick={this.props.handleMode}
           >
             kj count!
