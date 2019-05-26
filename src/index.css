@@ -207,11 +207,11 @@ h1{
   font-size: 5vh;
 }
 .ljf.top{
-  height: calc((100vh - 51px - 2 * 24px - 75px - 2 * 60px) * 0.67);
+  height: calc((100vh - 51px - 2 * 24px - 80px - 2 * 70px) * 0.67);
   overflow-y: scroll;
 }
 .ljf.bottom{
-  height: calc((100vh - 51px - 2 * 24px - 75px - 2 * 60px) * 0.33);
+  height: calc((100vh - 51px - 2 * 24px - 80px - 2 * 70px) * 0.33);
   overflow-y: scroll;
 }
 .ljf.big{
