@@ -149,7 +149,7 @@ export default class Ljf extends Component {
 
           <br/><br/>
 
-          Include <a href="sms:18125787448&body=#bet " className="ljf bet">#bet</a> to wager on weight, phenotypic sex, etc.
+          Include <a href="sms:18125787448&body=#bet%20" className="ljf bet">#bet</a> to wager on weight, phenotypic sex, etc.
 
           <br/><br/>
 
