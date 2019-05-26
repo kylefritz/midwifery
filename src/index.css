@@ -207,11 +207,11 @@ h1{
   font-size: 5vh;
 }
 .ljf.top{
-  height: calc((100vh - 56px - 51px - 19px - 5px - 19px - 5px - 75px - 56px) * 0.67);
+  height: calc((100vh - 51px - 2 * 24px - 75px - 2 * 60px) * 0.67);
   overflow-y: scroll;
 }
 .ljf.bottom{
-  height: calc((100vh - 56px - 51px - 19px - 5px - 19px - 5px - 75px - 56px) * 0.33);
+  height: calc((100vh - 51px - 2 * 24px - 75px - 2 * 60px) * 0.33);
   overflow-y: scroll;
 }
 .ljf.big{
@@ -227,7 +227,7 @@ h1{
   float: right;
 }
 .ljf.padded{
-  padding-top: 5px;
+  padding: 5px 0 5px 0;
 }
 .ljf.bet{
   background-color: #40806A;
