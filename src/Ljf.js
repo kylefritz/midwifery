@@ -3,18 +3,18 @@ import * as client from './client';
 
 export default class Ljf extends Component {
   state = {
-    parents: [],
-    fans: [],
+    updates: [],
+    reacts: [],
   }
 
   getData = () => {
     client.getEmojis()
     .then((response) => {
       this.setState({
-        parents: response.parents
+        updates: response.parents
           .filter(message => message.body.length > 0)
           .sort((a, b) => a.time < b.time ? -1 : 1),
-        fans: response.fans
+        reacts: response.fans
           .filter(message => message.body.length > 0)
           .sort((a, b) => a.time < b.time ? -1 : 1),
       })
@@ -27,12 +27,12 @@ export default class Ljf extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(prevState.parents.length !== this.state.parents.length){
+    if(prevState.updates.length !== this.state.updates.length){
       setInterval(() => {
         this.latestUpdate.scrollIntoView({ behavior: "smooth" })
       }, 100);
     }
-    if(prevState.fans.length !== this.state.fans.length){
+    if(prevState.reacts.length !== this.state.reacts.length){
       setInterval(() => {
         this.latestReact.scrollIntoView({ behavior: "smooth" })
       }, 200);
@@ -47,11 +47,11 @@ export default class Ljf extends Component {
         </div>
 
         <div className="ljf small padded">
-          Live updates ({this.state.parents.length === 0 ? "." : this.state.parents.length })
+          Live updates ({this.state.updates.length === 0 ? "." : this.state.updates.length })
         </div>
 
         <div className="ljf top padded">
-          {this.state.parents.map((message, i) => {
+          {this.state.updates.map((message, i) => {
             let ruby_time = message.time
             let grab_year = ruby_time.slice(0,4)
             let grab_month = ruby_time.slice(5,7) - 1
@@ -72,7 +72,7 @@ export default class Ljf extends Component {
               <div
                 key={i}
                 ref={(element) => {
-                  if(this.state.parents.length - 1 === i) {
+                  if(this.state.updates.length - 1 === i) {
                     this.latestUpdate = element
                   }
                 }}
@@ -89,11 +89,11 @@ export default class Ljf extends Component {
         </div>
 
         <div className="ljf small padded">
-          Reacts ({this.state.fans.length === 0 ? "." : this.state.fans.length })
+          Reacts ({this.state.reacts.length === 0 ? "." : this.state.reacts.length })
         </div>
 
         <div className="ljf bottom padded">
-          {this.state.fans.map((message, i) => {
+          {this.state.reacts.map((message, i) => {
             let ruby_time = message.time
             let grab_year = ruby_time.slice(0,4)
             let grab_month = ruby_time.slice(5,7) - 1
@@ -116,7 +116,7 @@ export default class Ljf extends Component {
                 key={i}
                 className={bet_css_class}
                 ref={(element) => {
-                  if(this.state.fans.length - 1 === i) {
+                  if(this.state.reacts.length - 1 === i) {
                     this.latestReact = element
                   }
                 }}
