@@ -26,18 +26,18 @@ export default class Ljf extends Component {
     setInterval(() => this.getData(), 3000);
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if(prevState.updates !== this.state.updates){
-  //     setInterval(() => {
-  //       this.latestUpdate.scrollIntoView({ behavior: "smooth" })
-  //     }, 100);
-  //   }
-  //   if(prevState.reacts !== this.state.reacts){
-  //     setInterval(() => {
-  //       this.latestReact.scrollIntoView({ behavior: "smooth" })
-  //     }, 200);
-  //   }
-  // }
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.updates.length !== this.state.updates.length){
+      setTimeout(() => {
+        this.latestUpdate.scrollIntoView({ behavior: "smooth" })
+      }, 100);
+    }
+    if(prevState.reacts.length !== this.state.reacts.length){
+      setTimeout(() => {
+        this.latestReact.scrollIntoView({ behavior: "smooth" })
+      }, 100);
+    }
+  }
 
   render() {
     return (
