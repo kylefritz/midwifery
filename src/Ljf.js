@@ -7,16 +7,18 @@ export default class Ljf extends Component {
     reacts: [],
   }
 
+  cleanData = (messages) => {
+    return messages
+      .filter(message => message.body.length > 0)
+      .sort((a, b) => a.time < b.time ? -1 : 1)
+  }
+
   getData = () => {
     client.getEmojis()
       .then((response) => {
         this.setState({
-          updates: response.parents
-            .filter(message => message.body.length > 0)
-            .sort((a, b) => a.time < b.time ? -1 : 1),
-          reacts: response.fans
-            .filter(message => message.body.length > 0)
-            .sort((a, b) => a.time < b.time ? -1 : 1),
+          updates: this.cleanData(response.parents),
+          reacts: this.cleanData(response.fans),
         })
       })
   }
