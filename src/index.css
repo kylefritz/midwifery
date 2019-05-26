@@ -229,9 +229,14 @@ h1{
 .ljf.padded{
   padding: 5px 0 5px 0;
 }
-.ljf.bet{
-  background-color: #40806A;
-}
 .under{
   text-decoration: underline
+}
+.ljf.kj{
+  background-color: #9E7CC1;
+  border-radius: 2px;
+}
+.ljf.bet{
+  background-color: #40806A;
+  border-radius: 2px;
 }

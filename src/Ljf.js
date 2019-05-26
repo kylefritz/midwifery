@@ -96,7 +96,11 @@ export default class Ljf extends Component {
 
         <div className="ljf bottom padded">
           {this.state.reacts.map((message, i) => {
-            let css = message.body.match(/#bet/ig) ? "ljf bet" : ""
+            let lastFour = message.from.substring(message.from.length - 4, message.from.length)
+            let id = lastFour === '0079' ? "_KJ_" : lastFour
+            let idCss = lastFour === '0079' ? "ljf kj" : ""
+            let betCss = message.body.match(/#bet/ig) ? "ljf bet" : ""
+            let css = `${betCss} ${idCss}`
 
             let ruby_time = message.time
             let grab_year = ruby_time.slice(0,4)
@@ -119,7 +123,6 @@ export default class Ljf extends Component {
             let green = message.from.slice(5,8)/999*100
             let red = message.from.slice(8,12)/9999*100
             let color = `rgb( ${red}%, ${green}%, ${blue}% )`
-            let id = message.from.substring(message.from.length - 4, message.from.length)
             return (
               <div
                 key={i}
