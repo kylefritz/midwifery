@@ -9,16 +9,16 @@ export default class Ljf extends Component {
 
   getData = () => {
     client.getEmojis()
-    .then((response) => {
-      this.setState({
-        updates: response.parents
-          .filter(message => message.body.length > 0)
-          .sort((a, b) => a.time < b.time ? -1 : 1),
-        reacts: response.fans
-          .filter(message => message.body.length > 0)
-          .sort((a, b) => a.time < b.time ? -1 : 1),
+      .then((response) => {
+        this.setState({
+          updates: response.parents
+            .filter(message => message.body.length > 0)
+            .sort((a, b) => a.time < b.time ? -1 : 1),
+          reacts: response.fans
+            .filter(message => message.body.length > 0)
+            .sort((a, b) => a.time < b.time ? -1 : 1),
+        })
       })
-    })
   }
 
   componentDidMount() {
@@ -133,11 +133,13 @@ export default class Ljf extends Component {
         </div>
 
         <div className="ljf small padded">
-          <span>
-            Send emojis for Laura to (812) 5-PUSH-IT <a href="sms:18125787448" className="ljf under">(812) 578-7448</a>!
-          </span>
+          Send emojis for Laura to (812) 5-PUSH-IT <a href="sms:18125787448" className="ljf under">(812) 578-7448</a>!
           <br/><br/>
-          <span className="ljf under"onClick={this.props.handleMode}>
+
+          <span
+            className="ljf under"
+            onClick={this.props.handleMode}
+          >
             kj count!
           </span>
         </div>
