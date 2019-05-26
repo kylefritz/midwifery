@@ -78,7 +78,7 @@ export default class Ljf extends Component {
             let grab_date = ruby_time.slice(8,10)
             let grab_hour = ruby_time.slice(11,13)
             let utc = new Date(Date.UTC(grab_year, grab_month, grab_date, grab_hour));
-            let month = utc.getMonth()
+            let month = utc.getMonth() + 1
             let date = utc.getDate()
             let full_hour = utc.getHours()
             let hour = full_hour === 0
