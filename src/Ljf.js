@@ -26,6 +26,19 @@ export default class Ljf extends Component {
     setInterval(() => this.getData(), 3000);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.parents.length !== this.state.parents.length){
+      setInterval(() => {
+        this.latestUpdate.scrollIntoView({ behavior: "smooth" })
+      }, 100);
+    }
+    if(prevState.fans.length !== this.state.fans.length){
+      setInterval(() => {
+        this.latestReact.scrollIntoView({ behavior: "smooth" })
+      }, 200);
+    }
+  }
+
   render() {
     return (
       <div>
@@ -55,14 +68,23 @@ export default class Ljf extends Component {
                       : full_hour
             let min =  ruby_time.slice(14,16)
             let half = full_hour > 11 ? 'p' : 'a'
-            return <div key={i}>
-              <span className="ljf big">
-                {message.body}
-              </span>
-              <span className="ljf small right">
-                {hour}:{min}{half} {month}/{date}
-              </span>
-            </div>
+            return (
+              <div
+                key={i}
+                ref={(element) => {
+                  if(this.state.parents.length - 1 === i) {
+                    this.latestUpdate = element
+                  }
+                }}
+              >
+                <span className="ljf big">
+                  {message.body}
+                </span>
+                <span className="ljf small right">
+                  {hour}:{min}{half} {month}/{date}
+                </span>
+              </div>
+            )
           })}
         </div>
 
@@ -89,14 +111,24 @@ export default class Ljf extends Component {
             let min =  ruby_time.slice(14,16)
             let half = full_hour > 11 ? 'p' : 'a'
             let bet_css_class = message.body.match(/bet/ig) ? "ljf bet" : null
-            return <div key={i} className={bet_css_class}>
-              <span className="ljf medium">
-                {message.body}
-              </span>
-              <span className="ljf small right">
-                {hour}:{min}{half} {month}/{date}&nbsp;☎-{message.from.substring(message.from.length - 4, message.from.length)}
-              </span>
-            </div>
+            return (
+              <div
+                key={i}
+                className={bet_css_class}
+                ref={(element) => {
+                  if(this.state.fans.length - 1 === i) {
+                    this.latestReact = element
+                  }
+                }}
+              >
+                <span className="ljf medium">
+                  {message.body}
+                </span>
+                <span className="ljf small right">
+                  {hour}:{min}{half} {month}/{date}&nbsp;☎-{message.from.substring(message.from.length - 4, message.from.length)}
+                </span>
+              </div>
+            )
           })}
         </div>
 
