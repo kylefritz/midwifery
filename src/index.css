@@ -211,7 +211,7 @@ h1{
   overflow-y: scroll;
 }
 .ljf.bottom{
-  height: calc(26vh - 14px);
+  height: calc(26vh - 14px * 2);
   overflow-y: scroll;
 }
 .ljf.big{
