@@ -30,12 +30,14 @@ export default class Ljf extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if(prevState.updates.length !== this.state.updates.length){
-      this.latestUpdate.scrollIntoView({ behavior: "smooth" })
+      setTimeout(() => {
+        this.latestUpdate.scrollIntoView({ behavior: "smooth" })
+      }, 100);
     }
     if(prevState.reacts.length !== this.state.reacts.length){
       setTimeout(() => {
         this.latestReact.scrollIntoView({ behavior: "smooth" })
-      }, 500);
+      }, 600);
     }
   }
 
