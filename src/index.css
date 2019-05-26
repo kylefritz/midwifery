@@ -207,14 +207,12 @@ h1{
   font-size: 5vh;
 }
 .ljf.top{
-  height: calc(34vh - 14px * 2);
+  height: 50vh;
   overflow-y: scroll;
-  /* outline: red 1px solid; */
 }
 .ljf.bottom{
-  height: calc(26vh - 14px);
+  height: 25vh;
   overflow-y: scroll;
-  /* outline: blue 1px solid; */
 }
 .ljf.big{
   font-size: 32px;
@@ -232,9 +230,7 @@ h1{
   padding-top: 5px;
 }
 .ljf.bet{
-  background-color: darkgoldenrod;
-  padding: 6px;
-  margin: 2px;
+  background-color: #40806A;
 }
 .under{
   text-decoration: underline
