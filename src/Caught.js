@@ -45,11 +45,19 @@ export default class Caught extends Component {
             size={'large'}
             height={400}
            />
-
           <h1>
             <T>Catch</T> <T>Those</T> <T>Babies</T> <T>KJ</T> <T>!</T> <T>!</T>
           </h1>
        </div>
+       <br/>
+       {[...Array(this.state.babies)].map((n, i) =>
+        <span key={i}>
+          {i === 84
+            ? "🐟"
+            : ["👶🏻", "👶🏼", "👶🏽", "👶🏾"][Math.floor(Math.random()*4)]
+          }
+        </span>
+       )}
        {newBabies > 0 && (
          <div style={{marginTop: '16px', fontSize: 'larger', textAlign: 'center'}}>
            Caught since you last checked:
