@@ -71,20 +71,23 @@ export default class Ljf extends Component {
             let min =  ruby_time.slice(14,16)
             let half = full_hour > 11 ? 'p' : 'a'
             return (
-              <div
-                key={i}
-                ref={(element) => {
-                  if(this.state.updates.length - 1 === i) {
-                    this.latestUpdate = element
-                  }
-                }}
-              >
-                <span className="ljf big">
-                  {message.body}
-                </span>
-                <span className="ljf small right">
-                  {hour}:{min}{half} {month}/{date}
-                </span>
+              <div>
+                <br/>
+                <div
+                  key={i}
+                  ref={(element) => {
+                    if(this.state.updates.length - 1 === i) {
+                      this.latestUpdate = element
+                    }
+                  }}
+                >
+                  <span className="ljf big">
+                    {message.body}<br/>
+                  </span>
+                  <span className="ljf small right">
+                    {hour}:{min}{half} {month}/{date}
+                  </span>
+                </div>
               </div>
             )
           })}
@@ -124,21 +127,24 @@ export default class Ljf extends Component {
             let red = message.from.slice(8,12)/9999*100
             let color = `rgb( ${red}%, ${green}%, ${blue}% )`
             return (
-              <div
-                key={i}
-                className={css}
-                ref={(element) => {
-                  if(this.state.reacts.length - 1 === i) {
-                    this.latestReact = element
-                  }
-                }}
-              >
-                <span className="ljf medium">
-                  {message.body}
-                </span>
-                <span className="ljf small right">
-                  {hour}:{min}{half} {month}/{date}&nbsp;<span style={{color: color}}>☎-{id}</span>
-                </span>
+              <div>
+                <br/>
+                <div
+                  key={i}
+                  className={css}
+                  ref={(element) => {
+                    if(this.state.reacts.length - 1 === i) {
+                      this.latestReact = element
+                    }
+                  }}
+                >
+                  <span className="ljf medium">
+                    {message.body}
+                  </span>
+                  <span className="ljf small right">
+                    {hour}:{min}{half} {month}/{date}&nbsp;<span style={{color: color}}>☎-{id}</span>
+                  </span>
+                </div>
               </div>
             )
           })}
